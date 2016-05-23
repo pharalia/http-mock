@@ -22,7 +22,7 @@ class Server extends Process
         $this->host = $host;
         parent::__construct(
             sprintf(
-                'exec php -dalways_populate_raw_post_data=-1 -derror_log= -S %s -t public/ public/index.php',
+                'php -dalways_populate_raw_post_data=-1 -derror_log= -S %s -t public public/index.php',
                 $this->getConnectionString()
             ),
             __DIR__ . '/../'
